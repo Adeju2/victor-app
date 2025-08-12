@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REACT SOPHIA</title>
+
+    <!-- 1. React Library: The core of React -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- 2. ReactDOM Library: Connects React to the browser's DOM -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 3. Babel Standalone: Converts our special "JSX" code into regular JavaScript the browser understands -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      /* Some basic styling so it doesn't look too bare */
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        background-color: #f0f2f5;
+      }
+      #root {
+        background-color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This is where our React app will live! -->
+    <div id="root"></div>
+
+    <!-- This is where we write our React code -->
+    <!-- type="text/babel" is IMPORTANT: It tells Babel to process this script -->
+    <script type="text/babel">
+      // ALL OUR REACT CODE WILL GO HERE!
+      // Let's start with a simple component
+
+      // Component 1: A simple "Hello World" component
+      // A component is just a function that returns JSX (HTML-like code)
+      function HelloWorld() {
+        return <h1>Hello, React!</h1>;
+      }
+
+      // --- How to show our React components on the page ---
+      // 1. Find the 'root' div in our HTML
+      const rootElement = document.getElementById("root");
+
+      // 2. Create a React root (this is how React takes over the div)
+      const root = ReactDOM.createRoot(rootElement);
+
+      // 3. Tell React what components to render inside the 'root'
+      // We can put multiple components inside a main container element
+      root.render(
+        <div>
+          <HelloWorld />{" "}
+          {/* This is how we use our components, like HTML tags! */}
+          <GreetPerson name="Learner" /> {/* Passing a 'name' prop */}
+          <Counter />
+        </div>
+      );
+    </script>
+  </body>
+</html>

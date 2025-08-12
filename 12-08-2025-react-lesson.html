@@ -50,36 +50,19 @@
     </style>
   </head>
   <body>
-    <!-- This is where our React app will live! -->
     <div id="root"></div>
 
-    <!-- This is where we write our React code -->
-    <!-- type="text/babel" is IMPORTANT: It tells Babel to process this script -->
     <script type="text/babel">
-      // ALL OUR REACT CODE WILL GO HERE!
-      // Let's start with a simple component
-
-      // Component 1: A simple "Hello World" component
-      // A component is just a function that returns JSX (HTML-like code)
       function HelloWorld() {
         return <h1>Hello, React!</h1>;
       }
 
-      // --- How to show our React components on the page ---
-      // 1. Find the 'root' div in our HTML
       const rootElement = document.getElementById("root");
-
-      // 2. Create a React root (this is how React takes over the div)
       const root = ReactDOM.createRoot(rootElement);
 
-      // 3. Tell React what components to render inside the 'root'
-      // We can put multiple components inside a main container element
       root.render(
         <div>
           <HelloWorld />{" "}
-          {/* This is how we use our components, like HTML tags! */}
-          <GreetPerson name="Learner" /> {/* Passing a 'name' prop */}
-          <Counter />
         </div>
       );
     </script>
